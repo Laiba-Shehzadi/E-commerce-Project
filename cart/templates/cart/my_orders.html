@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders | MyShop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #cbd5e1;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .orders {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .order-card {
+            background: #dbeafe;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,.15);
+        }
+
+        .order-card h2 {
+            color: #0d6efd;
+            margin-top: 0;
+        }
+
+        .order-card p {
+            color: #444;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        .empty {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .btn:hover {
+            background: #084298;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>My Orders</h1>
+
+<div class="orders">
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+            <div class="order-card">
+
+                <h2>
+    <a href="{% url 'order_detail' order.id %}">
+        Order #{{ order.id }}
+    </a>
+</h2>
+
+                <p>
+                    <strong>Date:</strong>
+                    {{ order.created_at|date:"d M Y" }}
+                </p>
+
+                <p>
+                    <strong>Total:</strong>
+                    Rs. {{ order.total }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span class="status">
+                        {{ order.status }}
+                    </span>
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p class="empty">
+            You haven't placed any orders yet.
+        </p>
+
+    {% endif %}
+
+    <a href="{% url 'product_list' %}" class="btn">
+        Continue Shopping
+    </a>
+
+</div>
+
+</body>
+</html>

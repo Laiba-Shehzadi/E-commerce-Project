@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout | MyShop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #cbd5e1;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .checkout {
+            max-width: 600px;
+            margin: auto;
+            background: #dbeafe;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+        }
+
+        .total {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #aaa;
+            border-radius: 7px;
+            box-sizing: border-box;
+        }
+
+        .place-order {
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .place-order:hover {
+            background: #084298;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="checkout">
+
+    <h1>Checkout</h1>
+
+    <div class="total">
+        Total: Rs. {{ total }}
+    </div>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone</label>
+        <input type="text" name="phone" required>
+
+        <label>Address</label>
+        <textarea name="address" rows="4" required></textarea>
+
+        <label>City</label>
+        <input type="text" name="city" required>
+
+        <button type="submit" class="place-order">
+            Place Order
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmed | MyShop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #cbd5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .success-card {
+            background: #dbeafe;
+            padding: 40px;
+            width: 450px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.2);
+        }
+
+        h1 {
+            color: #0d6efd;
+        }
+
+        p {
+            color: #444;
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .btn:hover {
+            background: #084298;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="success-card">
+
+    <h1>🎉 Order Confirmed!</h1>
+
+    <p>
+        Thank you, {{ order.name }}!
+    </p>
+
+    <p>
+        Your order has been placed successfully.
+    </p>
+
+    <p>
+        <strong>Order #{{ order.id }}</strong>
+    </p>
+
+    <p>
+        Total: <strong>Rs. {{ order.total }}</strong>
+    </p>
+
+    <a href="{% url 'product_list' %}" class="btn">
+        Continue Shopping
+    </a>
+
+</div>
+
+</body>
+</html>
