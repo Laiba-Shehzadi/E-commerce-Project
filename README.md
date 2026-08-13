@@ -40,7 +40,7 @@ MyShop is a basic full-stack e-commerce web application built with **Python and 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/MyShop-Django-Ecommerce.git
+git clone https://github.com/Laiba-Shehzadi/E-commerce-Project.git
 ````
 
 ### 2. Open the Project Folder
