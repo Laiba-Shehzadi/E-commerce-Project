@@ -23,42 +23,94 @@ MyShop is a basic full-stack e-commerce web application built with **Python and 
 
 ## 📁 Project Structure
 
-MyShop-Django-Ecommerce/
-│
-├── accounts/        # User registration and authentication
-├── store/           # Products and product details
-├── cart/            # Cart, checkout and orders
-├── ecommerce/       # Project settings and URLs
-├── static/          # CSS and static files
-├── media/           # Product images
-├── manage.py
-├── requirements.txt
-└── README.md
+- Ecommerce-Project/
+- │
+- ├── accounts/        # User registration and authentication
+- ├── store/           # Products and product details
+- ├── cart/            # Cart, checkout and orders
+- ├── ecommerce/       # Project settings and URLs
+- ├── static/          # CSS and static files
+- ├── media/           # Product images
+- ├── manage.py
+- ├── requirements.txt
+- └── README.md
+
 ## 🚀 Installation & Setup
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/MyShop-Django-Ecommerce.git
+````
 
-### 2. open the project folder
-cd E-commerce Project
-### 3.Create a Virtual Environment
+### 2. Open the Project Folder
+
+```bash
+cd E-commerce-Project
+```
+
+### 3. Create a Virtual Environment
+
+```bash
 python -m venv venv
-### 4. Activate the Virtual Environment
-venv\Scripts\activate
-### 5.Install Dependencies
-pip install -r requirements.txt
-### 6.Run Database Migrations
-python manage.py createsuperuser
-### 7.Create a Superuser
-python manage.py createsuperuser
-### 8.Start the Development Server
-python manage.py runserver
-### 9. OPEN THE APPLICATION
-http://127.0.0.1:8000/
-### 10. Open Django Admin
-http://127.0.0.1:8000/admin/
+```
 
-## DEVELOPER
-Laiba shehzadi 
+### 4. Activate the Virtual Environment
+
+For Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Run Database Migrations
+
+```bash
+python manage.py migrate
+```
+
+### 7. Create a Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+Follow the instructions in the terminal to create your admin account.
+
+### 8. Start the Development Server
+
+```bash
+python manage.py runserver
+```
+
+### 9. Open the Application
+
+Visit:
+
+```text
+http://127.0.0.1:8000/
+```
+
+### 10. Open Django Admin
+
+Visit:
+
+```text
+http://127.0.0.1:8000/admin/
+```
+
+Log in using the superuser account created in Step 7.
+
+```
+### Developer
+- Laiba Shehzadi 
+
+
+
+
